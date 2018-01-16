@@ -1,6 +1,6 @@
 package edu.pitt.Animals;
 
-public abstract class Animal implements IMovable{
+public abstract class Animal{
 	private String age;
 	private String color;
 	private String type;
@@ -8,19 +8,22 @@ public abstract class Animal implements IMovable{
 	private int minimumWeight = 1;
 	
 	public Animal(String age, String color, String type, int weight,int miniumWeight){
-	
+		this.age = age;
+		this.color = color;
+		this.type = type;
+		this.weight = weight;
+		this.minimumWeight = minimumWeight;
 		
 	}
+	
 	public Animal() {
-		
+		// TODO Auto-generated constructor stub
 	}
-	public Animal(String age, String color, int weight, int minimumWeight){
-	
-		
-	}
+
 	public void eat(){
 		
 		weight++;
+
 	}
 	
 	public int getWeight(){
@@ -35,10 +38,7 @@ public abstract class Animal implements IMovable{
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-	@Override
-	public void move() {
-		 
-	}
+	
 	public String output()
 	   {
 	      String str;

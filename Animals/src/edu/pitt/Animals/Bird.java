@@ -1,5 +1,5 @@
 package edu.pitt.Animals;
-public class Bird extends Animal implements IMovable{
+public class Bird extends Animal{
 
 	public Bird(String age, String color, String type, int weight, int minimumWeight) {
 		super(age, color, type, weight, minimumWeight);
@@ -13,20 +13,16 @@ public class Bird extends Animal implements IMovable{
 		
 	}
 	
-	public void fly () {
-		System.out.println("This bird flew ");
+	public void fly() {
+													//Every time their animal moves they lose weight.
+			int weight;
+			weight = getWeight() -2;
+			setWeight(weight);
+			System.out.println("Your bird flew forward");
 	}
 	
-	@Override
-	public void move(){
-		int weight;
+	
 		
-		weight = getWeight() -2;
-		setWeight(weight);
-		//System.out.println("The bird flew " + place + " spot"); I included these because I wasn't sure exactly how the program is 
-		// supposed to work.
-		
-		
-	}
+	
 	
 }

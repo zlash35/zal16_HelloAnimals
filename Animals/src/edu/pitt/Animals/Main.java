@@ -10,20 +10,27 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Fish bass = new Fish();
-		Fish trout = new Fish();
-		Mammal monkey = new Mammal();
-		Mammal gorilla = new Mammal();
-		Bird parrot = new Bird();
-		Bird humming = new Bird();
+		Animal bass = new Fish();
+		Animal trout = new Fish();
+		Animal monkey = new Mammal();
+		Animal gorilla = new Mammal();
+		Animal parrot = new Bird();
+		Animal humming = new Bird();
 		
-		System.out.println();
+		
 		bass.setWeight(7);
 		trout.setWeight(6);
 		monkey.setWeight(55);
 		gorilla.setWeight(210);
 		parrot.setWeight(3);
 		humming.setWeight(2);
+		
+		((Fish) bass).swim();
+		((Fish) trout).swim();
+		((Mammal) monkey).run();
+		((Mammal) gorilla).run();
+		((Bird) parrot).fly();
+		((Bird) humming).fly();
 		
 		ArrayList<Object> animal = new ArrayList<Object>();
 		animal.add(bass);
@@ -33,18 +40,20 @@ public class Main {
 		animal.add(parrot);
 		animal.add(humming);
 		
-	
+		
+		
 		Iterator<Object> it = animal.iterator();
-		while(it.hasNext()){  
-	            Animal st=(Animal)it.next(); 
-	            st.eat();
-	            st.eat();
-	            st.move();
-	            System.out.println(st.output()); 
-		}        
-	            
-		
-		
+		for(int i=0;i<animal.size();i++)    {
+			
+			Animal st=(Animal)it.next(); 
+				st.eat();						// Every time the animal eats they gain weight.
+				st.eat();
+				st.eat();
+				System.out.println(st.output());
+
+            
+        }  
+
 		
 	}
 
